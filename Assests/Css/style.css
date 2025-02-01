@@ -1,0 +1,193 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #121212;
+  --white-color: #ffff;
+  --text-color: #DDB637;
+  --card-color: #B30024;
+  --button-color: #EC0030;
+  --fs-24: 24px;
+  --fs-64: 64px;
+  --fs-18: 18px;
+  --fs-46: 46px;
+  --fs-24: 24px;
+  --fs-22: 22px;
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+  --cities-typeface:"Cities Typeface";
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Header Start */
+header {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+header .menu ul li {
+  font-size: var(--fs-24);
+  font-weight: 500;
+}
+
+header .menu ul li a i {
+  font-size: 42px;
+}
+
+header .btn a {
+  color: var(--white-color);
+  background-color: red;
+  padding: 5px 40px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+/* Banner Start */
+.banner .bg-banner {
+  background-image: url('../Images/RecentlyAnnounced\ 1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  position: relative;
+}
+
+/* Banner End */
+
+/* Games Start */
+.games-title span {
+  padding-right: 20px;
+  font-size: var(--fs-46);
+  /* color: var(--white-color); */
+  font-weight: normal;
+  color: var(--white-color);
+}
+.games-content{
+  padding-top: 144px;
+}
+.games-title span::after {
+  content: "";
+  width: 400px;
+  display: inline-block;
+  border-bottom: 5px solid var(--white-color);
+  position: relative;
+  margin-left: 28px;
+  top: -10px;
+}
+.games-content .btn a{
+  color: var(--white-color);
+  background-color: red;
+  padding: 5px 40px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.games-images{
+  padding-top: 30px;
+}
+.games-images h2{
+  font-size: var(--fs-22);
+  color:var(--white-color);
+  padding-right: 90px;
+  padding-top: 10px;
+  color: var(--text-color);
+  font-family: var(--cities-typeface);
+}
+
+.collaborators-content{
+  padding-top: 144px;
+}
+.collaborators-title span::after {
+  content: "";
+  width: 400px;
+  display: inline-block;
+  border-bottom: 5px solid var(--white-color);
+  position: relative;
+  margin-left: 28px;
+  top: -10px;
+}
+.collaborators-title span {
+  padding-right: 20px;
+  font-size: var(--fs-46);
+  /* color: var(--white-color); */
+  font-weight: normal;
+  color: var(--white-color);
+}
+
+.collaborators-images{
+  padding-top: 30px;
+}
+
+/* Tournament start */
+.tournament-content{
+  padding-top: 144px;
+}
+.tournament-title span::after {
+  content: "";
+  width: 400px;
+  display: inline-block;
+  border-bottom: 5px solid var(--white-color);
+  position: relative;
+  margin-left: 28px;
+  top: -10px;
+}
+.tournament-title span {
+  padding-right: 20px;
+  font-size: var(--fs-46);
+  /* color: var(--white-color); */
+  font-weight: normal;
+  color: var(--white-color);
+}
+
+.tournament-images .tournament-1{
+  background-color: var(--card-color);
+  padding: 5px;
+  border-radius: 12px;
+}
+.tournament-images .tournament-1 img{
+  width: 100%;
+}
+.tournament-images .tournament-1 .description-title{
+  padding-top: 15px;
+}
+.tournament-images .tournament-1 .description-title h3{
+  font-size: var(--fs-18);
+}
+.tournament-images .tournament-1 .description-title .btn a{
+  background-color: var(--button-color);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.tournament-images .tournament-1 .description-info p{
+  font-size: var(--fs-18);
+  padding-right: 120px;
+}
+.tournament-images .tournament-1 .description-info .btn a{
+  background-color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+/* Tournament End */
