@@ -26,6 +26,7 @@
   --fw-800: 800;
   --fw-900: 900;
   --cities-typeface: "Cities Typeface";
+  --em-one:"Em One";
 }
 
 
@@ -45,11 +46,17 @@ header {
   position: absolute;
   z-index: 1;
   backdrop-filter: blur(5px);
+  position: fixed;
 }
 
 header .menu ul li {
   font-size: var(--fs-24);
   font-weight: 500;
+  font-family: var(--em-one);
+}
+header .menu ul li a{
+  color: var(--white-color);
+  transition: 0.2s;
 }
 
 header .menu ul li a i {
@@ -59,9 +66,11 @@ header .menu ul li a i {
 header .btn a {
   color: var(--white-color);
   background-color: red;
-  padding: 5px 40px;
+  padding: 5px 30px;
   border-radius: 5px;
   font-size: 20px;
+  font-family: var(--em-one);
+  transition: 0.5s;
 }
 
 /* Banner Start */
@@ -84,6 +93,9 @@ header .btn a {
   /* color: var(--white-color); */
   font-weight: normal;
   color: var(--white-color);
+  font-family: var(--em-one);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .games-content {
@@ -106,17 +118,23 @@ header .btn a {
   padding: 5px 40px;
   border-radius: 5px;
   font-size: 20px;
+  font-family: var(--em-one);
+  transition: 0.5s;
 }
 
 .games-images {
   padding-top: 30px;
+}
+.games-images img{
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .games-images h2 {
   font-size: var(--fs-22);
   color: var(--white-color);
   padding-right: 90px;
-  padding-top: 10px;
+  padding-top: 25px;
   color: var(--text-color);
   font-family: var(--cities-typeface);
 }
@@ -141,15 +159,22 @@ header .btn a {
   /* color: var(--white-color); */
   font-weight: normal;
   color: var(--white-color);
+  font-family: var(--em-one);
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .collaborators-images {
   padding-top: 30px;
 }
-
+.collaborators-images img{
+  transition: 0.5s;
+  cursor: pointer;
+}
 /* Tournament start */
 .tournament-content {
   padding-top: 144px;
+  
 }
 
 .tournament-title span::after {
@@ -168,12 +193,17 @@ header .btn a {
   /* color: var(--white-color); */
   font-weight: normal;
   color: var(--white-color);
+  font-family: var(--em-one);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .tournament-content .btn a{
   background-color: red;
   padding: 5px 40px;
   border-radius: 5px;
   font-size: 20px;
+  font-family: var(--em-one);
+  transition: 0.5s;
 }
 .tournament-1,
 .tournament-2 {
@@ -181,6 +211,7 @@ header .btn a {
   padding: 5px;
   border-radius: 12px;
   margin-top: 30px;
+  overflow: hidden;
 }
 
 .tournament-1 img,
@@ -188,6 +219,8 @@ header .btn a {
 .tournament-3 img,
 .tournament-4 img {
   width: 100%;
+  transition: 0.5s;
+  
 }
 
 .tournament-1 .description-title,
@@ -245,6 +278,7 @@ header .btn a {
   padding: 5px;
   border-radius: 12px;
   margin-top: 90px;
+  overflow: hidden;
 }
 
 /* Tournament End */
@@ -256,46 +290,110 @@ footer{
 footer h2{
   padding-top: 30px;
   font-size: var(--fs-46);
+  font-family: var(--em-one);
 }
 footer h3{
   font-size: var(--fs-24);
   padding: 52px 0;
+  font-family: var(--cities-typeface);
 }
-.logo-slider {
+
+/* SLIDER START */
+
+
+.scroller { 
+  max-width: 1400px;
+  /* border: 3px solid lime; */
+}
+
+.scroller__inner {
+  display: flex;
+  padding-block: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
   overflow: hidden;
-  padding: 30px 0 0 0;
-  white-space: nowrap;
-  position: relative;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
 
-.logos-slide {
-  display: inline-block;
-  animation: 15s slide infinite linear;
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation-delay: 1s;
 }
 
-.logos-slide .slide {
-  display: inline-block;
+.scroller[data-direction='left'] {
+  --_animation-direction: forwards;
+}
+.scroller[data-direction='right'] {
+  --_animation-direction: reverse;
 }
 
-.logos-slide img {
-  max-width: 400px;
-  max-width: 300px;
-  margin: 5px 0;
+.scroller[data-direction='slow'] {
+  --_animation-duration: 20s;
+}
+.scroller[data-speed='fast'] {
+  --_animation-duration: 10s;
 }
 
-.slide h2 {
- font-size: 16px;
- text-align: left;
- font-family:'Arial';
- font-style: normal;
- margin: 5px 0;
-}
 
-@keyframes slide {
-  from {
-      transform: translateX(0);
-  }
+@keyframes scroll {
   to {
-      transform: translateX(-100%);
+      transform: translate(calc(-50% - 0.5rem));
   }
+}
+
+footer a img{
+ width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 300ms;
+  filter: grayscale(.2);
+  cursor: pointer;
+}
+
+.scroller[data-animated="true"] .scroller__inner:has(img:hover, img:active, img:focus) {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+footer img:hover, footer img:focus, footer img:active {
+  transform: scale(1.1);
+  filter: saturate(1.5);
+}
+
+.scroller[data-animated="true"] .scroller__inner:has(li:hover, li:active, li:focus) {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+/* SLIDER END */
+
+
+/* HOVER START */
+header .btn a:hover , .games .btn a:hover , .tournament-content .btn a:hover{
+  background-color: transparent;
+  border: 1px solid var(--card-color);
+  color: var(--white-color);
+}
+
+.tournament-1 img:hover , .tournament-2 img:hover , .tournament-3 img:hover , .tournament-4 img:hover{
+  transform: scale(1.1);
+}
+
+.collaborators-title span:hover , .games-title span:hover , .tournament-title span:hover{
+  color: var(--button-color);
+  text-shadow:  2px 2px 15px var(--card-color);
+}
+
+header .menu ul li a:hover{
+  color: var(--text-color);
+}
+
+
+.games-images img:hover , .collaborators-images img:hover{
+  transform: scale(1.1);
 }
