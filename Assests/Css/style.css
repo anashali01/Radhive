@@ -102,7 +102,7 @@ header .btn a {
   padding-top: 144px;
 }
 
-.games-title span::after {
+/* .games-title span::after {
   content: "";
   width: 400px;
   display: inline-block;
@@ -110,6 +110,32 @@ header .btn a {
   position: relative;
   margin-left: 28px;
   top: -10px;
+  
+} */
+ .games-title .line{
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  width: 500px;
+ }
+ .games-title .line .line-value{
+  animation: load 3s normal forwards;
+  background-color: var(--card-color);
+  height: 10px;
+  width: 0;
+  transition: width 3s ease-in;
+  box-shadow: 2px 2px 15px var(--card-color);
+ }
+
+ @keyframes load {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .games-content .btn a {
@@ -366,6 +392,7 @@ footer img:hover, footer img:focus, footer img:active {
   filter: saturate(1.5);
 }
 
+
 .scroller[data-animated="true"] .scroller__inner:has(li:hover, li:active, li:focus) {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
@@ -392,6 +419,9 @@ header .btn a:hover , .games .btn a:hover , .tournament-content .btn a:hover{
 header .menu ul li a:hover{
   color: var(--text-color);
 }
+
+
+
 
 
 .games-images img:hover , .collaborators-images img:hover{
