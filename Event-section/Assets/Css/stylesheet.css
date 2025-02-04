@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Cities Typeface';
+    src: url('../Font/transfonter.org-20250201-143453/') format('woff2'),
+        url('../Font/transfonter.org-20250201-143453//CitiesTypeface.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Em One';
+    src: url('../Font/transfonter.org-20250202-170640/') format('woff2'),
+        url('../Font/transfonter.org-20250202-170640//EmOne-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Em One';
+    src: url('../Font/transfonter.org-20250202-170640//EmOne-SemiBoldItalic.woff2') format('woff2'),
+        url('../Font/transfonter.org-20250202-170640//EmOne-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
