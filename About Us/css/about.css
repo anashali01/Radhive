@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #121212 !important;
+}
+:root {
+    --bg-color: #121212;
+  --white-color: #ffff;
+  --text-color: #DDB637;
+  --card-color: #B30024;
+  --button-color: #EC0030;
+    --cities-typeface: "Cities Typeface";
+    --em-one:"Em One";
+}
+ul,
+ol {
+  list-style: none;
+}
+/* Header Start */
+header {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    position: fixed;
+} 
+header .menu ul li {
+    font-size: var(--fs-24);
+    font-weight: 500;
+    font-family: var(--em-one);
+}
+header .menu ul li a{
+    transition: 0.2s;
+}
+header .menu ul li a i {
+    font-size: 42px;
+}
+header .btn a {
+    background-color: red;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: var(--em-one);
+    transition: 0.5s;
+}
+/* header end   */
+/* about us start */
+.line{
+  width: 30%;
+  height: 8px;
+  background-color: var(--white-color);
+  margin-left: 20px;
+  position: relative;
+}
+.line::before{
+  content: '';
+  width: 0;
+  height: 100%;
+  background-color: var(--button-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.line:hover::before{
+  width: 100%;
+  transition: 0.9s;
+  box-shadow: -1px -1px 30px 0px rgba(236,0,48,0.62);
+}
+.ac:hover{
+  color: var(--button-color) !important;
+  cursor: pointer;
+}
+/* about us end */
+/* founder start  */
+.image1{
+  width: 305px;
+  height: 450px;
+  background-image: url("../image/4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image2{
+  width: 305px;
+  height: 450px;
+  background-image: url("../image/3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image3{
+  width: 305px;
+  height: 450px;
+  background-image: url("../image/2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image4{
+  width: 305px;
+  height: 450px;
+  background-image: url("../image/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* founder end  */
+/* footer start  */
+footer{
+    background-color: var(--card-color);
+    margin-top: 144px;
+  }
+  footer h2{
+    padding-top: 30px;
+    font-size: var(--fs-46);
+    font-family: var(--em-one);
+  }
+  footer h3{
+    font-size: var(--fs-24);
+    padding: 52px 0;
+    font-family: var(--cities-typeface);
+  }
+  
+  /* SLIDER START */
+  
+  
+  .scroller { 
+    max-width: 1400px;
+  }
+  
+  .scroller__inner {
+    display: flex;
+    padding-block: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+  
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    animation-delay: 1s;
+  }
+  
+  .scroller[data-direction='left'] {
+    --_animation-direction: forwards;
+  }
+  .scroller[data-direction='right'] {
+    --_animation-direction: reverse;
+  }
+  
+  .scroller[data-direction='slow'] {
+    --_animation-duration: 20s;
+  }
+  .scroller[data-speed='fast'] {
+    --_animation-duration: 10s;
+  }
+  
+  
+  @keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+  
+  footer a img{
+   width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 300ms;
+    filter: grayscale(.2);
+    cursor: pointer;
+  }
+  
+  .scroller[data-animated="true"] .scroller__inner:has(img:hover, img:active, img:focus) {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+  footer img:hover, footer img:focus, footer img:active {
+    transform: scale(1.1);
+    filter: saturate(1.5);
+  }
+  
+  
+  .scroller[data-animated="true"] .scroller__inner:has(li:hover, li:active, li:focus) {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  /* SLIDER END */
+/* footer end  */  
